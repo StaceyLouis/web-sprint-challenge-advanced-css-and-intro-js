@@ -241,19 +241,38 @@ function getArtistByIndex(array, index) {
 /* Task 4: Create a function called get20s() that takes data
  as an argument and returns an array with names of artists who
   lived in the 20th century (1900-2000) */
-/*
+
 function get20s(arr){
   let filtArr = [];
-  for (let i = 0;  i < arr.length; i++ ){
-    if (arr[i].includes('')){
-      filtArr.push(arr[i]);
-  } else if (arr[i].includes(''))
-return filtArr;
+  for (let i = 0;  i < arr.length - 1; i++ ){
+    x = arr[i].years;
+  y = x.substr(0,2);
+  z = x.substr(7,2);
+  console.log(z.charAt(0))
+    if(y.includes('19') || z.includes('19')){
+      filtArr.push(arr[i].name);
+     
+  } 
+
+
+  }
+  return filtArr;
 }
+
+
+for (i = 0; i < arr.length-1; i++){
+if(arr[i].paintings > 100) {
+  
+  winners = [...winners, arr[i]];
+
+}
+}
+
+
 
 console.log(get20s(artists));
 
-*/
+
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -306,7 +325,7 @@ function addArtist(arr){
     years: '1992-2020',
     genre: 'Web Design' , 
     nationality: 'French',
-    bio: ""
+    bio: "",
     });
 return arr;
     
@@ -322,26 +341,20 @@ return arr;
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
-
 function lotsOfArt(arr){
 let winners = [];
-console.log({arr});
-for (i = 0; i < arr.length-1; i++){
+
+for ( let i = 0; i < arr.length-1; i++){
 if(arr[i].paintings > 100) {
-  console.log(arr[i]);
+  
   winners = [...winners, arr[i]];
 
-  console.log(winners)
 }
 }
 return winners;
 
 }
 console.log(lotsOfArt(artists));
-
-
-
-
 
 
 // 🎨🎨 STRETCH 🎨🎨//
@@ -369,18 +382,18 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 function getHTML(/* Code here */){
 
-    /* Code here */
+  /* Code here */
 
-  }
+}
 
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
 function randomize(/* Code here */){
 
-    /* Code here */
+  /* Code here */
 
-  }
+}
 
 
- /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+/* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
